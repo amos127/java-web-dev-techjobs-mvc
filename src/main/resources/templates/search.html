@@ -23,7 +23,6 @@
                         th:checked="${column.key == radio}"/>
                 <label th:for="${column.key}" th:text="${column.value}"></label>
             </span>
-
         </p>
 
         <p>
@@ -35,8 +34,8 @@
     </form>
 
     <hr />
-    <!-- TODO #4 - Loop over the search results to display all job fields. -->
-    <table th:replace="fragments :: job-listing-table"></table>
+
+    <table th:replace="fragments :: jobs-table"></table>
 </div>
 
 </body>

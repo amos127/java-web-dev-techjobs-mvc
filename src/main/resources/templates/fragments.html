@@ -20,14 +20,15 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a th:href="@{/search}">Search</a></li>
-                    <li><a th:href="@{/list}">List</a></li>
+                    <li th:each="action : ${actions}">
+                        <a th:href="@{'/' + ${action.key}}" th:text="${action.value}"></a>
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <table th:fragment="job-listing-table" class="job-listing">
+    <table th:fragment="jobs-table" class="job-listing">
         <tr th:each="job : ${jobs}" >
             <td>
                 <p>
@@ -41,25 +42,25 @@
                 <p>
                     <span>Employer: </span>
                     <span>
-                    <a th:href="@{/list/jobs(column='employer', value=${job.employer})}" th:text="${job.employer}"></a>
+                        <a th:href="@{/list/jobs(column='employer', value=${job.employer})}" th:text="${job.employer}"></a>
                     </span>
                 </p>
                 <p>
                     <span>Location: </span>
                     <span>
-                    <a th:href="@{/list/jobs(column='location', value=${job.location})}" th:text="${job.location}"></a>
+                        <a th:href="@{/list/jobs(column='location', value=${job.location})}" th:text="${job.location}"></a>
                     </span>
                 </p>
                 <p>
                     <span>Position Type: </span>
                     <span>
-                    <a th:href="@{/list/jobs(column='positionType', value=${job.positionType})}" th:text="${job.positionType}"></a>
+                        <a th:href="@{/list/jobs(column='positionType', value=${job.positionType})}" th:text="${job.positionType}"></a>
                     </span>
                 </p>
                 <p>
                     <span>Skill: </span>
                     <span>
-                    <a th:href="@{/list/jobs(column='coreCompetency', value=${job.coreCompetency})}" th:text="${job.coreCompetency}"></a>
+                        <a th:href="@{/list/jobs(column='coreCompetency', value=${job.coreCompetency})}" th:text="${job.coreCompetency}"></a>
                     </span>
                 </p>
             </td>
