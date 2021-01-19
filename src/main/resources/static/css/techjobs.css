@@ -29,12 +29,19 @@ table.job-listing {
     width: 80%;
 }
 
+/*
 table.job-listing td:first-child {
     font-weight: bold;
 }
 
 table.job-listing td:last-child {
     width: 80%;
+}
+*/
+
+table.job-listing span:nth-child(odd) {
+    font-weight: bold;
+    font-style: italic;
 }
 
 label {
@@ -44,3 +51,8 @@ label {
 .centered {
     text-align: center;
 }
+
+table.job-listing a {
+    color: inherit;
+}
+
