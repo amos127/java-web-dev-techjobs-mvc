@@ -25,6 +25,7 @@ public class SearchController extends TechJobsController {
 
     @RequestMapping("results")
     public String displaySearchResults(Model model, @RequestParam String searchType, @RequestParam String searchTerm) {
+
         ArrayList<Job> jobs;
 
         if (searchTerm.toLowerCase().equals("all")){

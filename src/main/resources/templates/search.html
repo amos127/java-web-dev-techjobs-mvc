@@ -35,6 +35,8 @@
 
     <hr />
 
+    <p th:if="${#lists.isEmpty(jobs) && (jobs != null)}">No results match search term.</p>
+
     <table th:replace="fragments :: jobs-table"></table>
 </div>
 
